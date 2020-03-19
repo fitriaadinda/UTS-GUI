@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Inconsolata|Nunito&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+        .sidebar1{
+            width: 15%;
+            height: 100%;
+            background-color: #44749d;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: width 2s;
+        }
+        .content1{
+            margin-left: 15%;
+        }
+        .sidebar{
+            width: 0%;
+            height: 100%;
+            background-color: #44749d;
+            position: fixed;
+            overflow: auto;
+            top: 0;
+            left: 0;
+            transition: width 2s;
+        }
+        .title{
+            width: 5%;
+            margin: 5%;
+        }
+        
+        .content{
+             float: left;
+            margin-left: 0%;
+            top: 0;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            font-family: Monospace, "Lucida Console";
+        }
+        .card h2{
+            text-align: center; 
+            font-size: small; 
+        }
+        .card {
+            width: 65%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            float: left;
+            padding: 10px;
+            margin-top: 20px;
+            margin-right: 30px;
+            overflow: auto;
+            background-color: #c6d4e1;
+            top: 0;
+        }
+        nav{
+            padding-left: 15px;
+            top: 0;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:#44749d;
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+        }
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            color: #c6d4e1;
+        }
+
+        .active {
+            background-color: #44749d;
+            color: #c6d4e1;
+        }
+
+        input[type=text] {
+            width: 100px;
+            width: 200px;
+            box-sizing: border-box;
+            border: 2px solid whitesmoke;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            padding: 5px 20px 5px 40px;
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            transition: width 0.4s ease-in-out;
+            float: right;
+            margin-top: 5px;
+        }
+        .search {
+            background-color: whitesmoke; 
+            color: black; 
+            border: 2px solid whitesmoke;
+            float: right;
+            padding: 6px 15px 7px 15px;
+            margin-top: 5px;
+            margin-right: 25px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .search:hover {
+            border: 2px solid #1976D2;
+            background-color: #1976D2;
+            color: white;
+        }
+        .garis{
+            margin-top: -20px; 
+            font-family: sans-serif; 
+            color: #1976D2; 
+            font-weight: bold; 
+            text-align: center;
+        }
+        .jumbotron {
+            font-size: 20px;
+            padding: 150px;
+            text-align: center;
+            color: #1976D2;
+            background-color:  #c6d4e1 ;
+        }
+        .jumbotron p{
+            color: black;
+            font-family: montserrat,"sans-serif";
+            margin-top: -30px;
+            font-style: normal;
+        }
+        .posted{
+            margin-top: -20px; 
+            font-family: sans-serif; 
+            color: #1976D2; 
+            font-weight: bold; 
+            text-align: center; 
+            font-size: smaller;
+        }
+        .isi{
+            font-family: 'Inconsolota'; 
+            font-size: 24px; 
+            text-align: center;
+        }
+
+        .aside{
+            width: 15%;
+            padding-left: 40px;
+            display: block;
+            float: right;
+            background-color: #ebe7e0;
+        }
+        footer{
+            width: 100%;
+            background-color: white;
+            margin-top: 30px;
+            padding: 20px;
+            color: #1976D2;
+            text-align: center;
+            display: block;  
+        }
+        @media screen and (max-width: 1000px) {
+            aside{
+            width: 100%;
+            padding: 0;
+        }
+        }   
+    </style>
+    <script>
+        function openNav(){
+            document.getElementById("menu").className="sidebar1";
+            document.getElementById("utama").className="content1";
+            document.getElementById("spanopen").className="span_open";
+        }
+        function closeNav(){
+            document.getElementById("menu").className="sidebar";
+            document.getElementById("utama").className="content";
+            document.getElementById("spanclose").className="span_close";
+        }
+    </script>
+</head>
+<body>
+            <div id="menu" class="sidebar">    
+                <div style="background-color: #c6d4e1 ; height: 5%;">Helloo
+                    <span class="span_close" id="spanclose" style="font-size: 20px; cursor: pointer; float: right;" onclick="closeNav()">X</span>
+                </div>
+                    
+                
+                <ul>
+                    <li><a class="active" href="#1">Home</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <main id="utama">
+            <header>
+            <nav>
+                <form>
+                    <button class="search">SEARCH</button>
+                    <input type="text" name="search" placeholder="Search..">
+                    
+                  </form>
+                <span class="span_open" id="spanopen" style="font-size: 38px; cursor: pointer;" onclick="openNav()">&#9776</span>
+            </nav>
+            <div class="jumbotron">
+                <h1>HELLOOO</h1>
+                <p>Start with us</p>
+            </div>
+        </header>
+            <div class="content" >
+            <article id="1" class="card">
+                <h2>POST</h2>
+                <p class="garis">_____</p>
+                <p class="isi">DIVING SAMA HIU DI MALDIVES</p>
+                <p class="posted">01 Maret 2020</p>
+                <center><img src="image/maldives1.jpg" style="width: 53%;"></center>
+                <p style="text-indent: 2em; text-align: justify;">Trip Maldives kali ini, susah dibikin move on banget. Yang perlu saya highlight adalah island hopping naik private boat mewah bak horang kayah. Kali ini lokasi snorkeling dan sandbank-nya beda. Sandbank (pasir timbul) yang ini bentuknya panjang banget jadi gampang cari spot kosong untuk foto-foto. Trus, pas acara free time, hampir semuanya kompak milih day trip ke satu resor jadilah seharian kami main bareng, tanding polo air melawan bule-bule, sampai belajar signature pose saya yang gaya kaki di atas.</p>
+            </article>
+            <article id="1" class="card">
+                <p class="isi">HARUS BANGET MADRID!</p>
+                <p class="posted">04 Maret 2020</p>
+                <center><img src="image/madrid2.jpg" style="width: 53%; "></center>
+                <p style="text-indent: 2em; text-align: justify;">Saya sudah pernah ke Spanyol, tapi entah kenapa saya melewatkan Madrid. Penerbangan ke Madrid kami naik Turkish Airlines. Sering ke Eropa saya naik Turkish, tapi baru kali ini naik Business Class. Di Soekarno-Hatta, kami menunggu di lounge khusus dan lewat imigrasi khusus yang nggak pake antre. Kursi di business class beneran bisa jadi tempat tidur rata (flat bed) jadi bisa tidur gaya andalan: tengkurep. Makanannya enak dan berlimpah.</p>
+            </article>
+            <aside>
+                <aside>
+                    <article>
+                         <header>
+                             <h2>About Me</h2>
+                             <p class="garis" style="text-align: left; margin-top: -30px;">_______</p>
+                             <figure>
+                                <img src="image/profil.jpeg" style="width: 30%; height: 20%; padding-left: 35px;">
+                                <p style="text-align: justify;"><b>Fitria Adinda Rahmawati </b> (lahir di Lamongan, Juni 13 2000), mahasiswa di Universitas Brawijaya Malang. Now here you are.</p>
+                              </figure>
+                         </header>
+                         <section>
+                             <h2>Follow Me</h2>
+                             <p class="garis" style="text-align: left; margin-top: -30px;">_______</p>
+                             <a href="https://www.instagram.com/fitriaadindaa_/"><img src="image/instagram.png" style="width: 25px; height: 25px;"></a>
+                             <a href="https://twitter.com/bbyboooo_"><img src="image/twitter.png" style="margin-left: 10px; width: 25px; height: 25px;"></a>
+                         </section>
+                    </article>
+                </aside>
+            </aside>
+        </div>
+        </main>
+        <footer>
+            &copy CopyRight Fitria Adinda Rahmawati
+        </footer>
+</body>
+</html>
